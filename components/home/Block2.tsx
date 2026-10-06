@@ -13,9 +13,9 @@ export default function Block2() {
           </div>
           <div className="second --parallax">
             <div className="title --medium --delta" data-increment="0.8">
-              entertainment
+              where reality
               <br />
-              realities
+              bends
             </div>
           </div>
           <div className="third">
@@ -79,9 +79,9 @@ export default function Block2() {
           <div className="six --parallax" data-parallax="-142">
             <div className="wysiwyg --medium --text-right --delta" data-increment="2">
               <p>
-                highrisk
+                new ways
                 <br />
-                challengers
+                to experience
               </p>
             </div>
             <div className="image --delta">

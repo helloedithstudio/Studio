@@ -14,7 +14,7 @@ export default function Team() {
               <br />
               Others call it experiential.
               <br />
-              Audiences all say the same thing: It’s the thing that stays with you.
+              We call it something that stays with you.
             </div>
           </div>
           <div className="third">

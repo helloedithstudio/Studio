@@ -12,9 +12,13 @@ export default function Footer() {
           </div>
           <div className="wysiwyg --small --text-left --na" data-increment="0.8">
             <p>
-              design, art,
+              Have an idea
               <br />
-              and technology.
+              worth making real?
+              <br />
+              <a className="link --text" href="/contact/" data-taxi-ignore="">
+                Let’s make something strange.
+              </a>
             </p>
           </div>
           <FooterLinks />

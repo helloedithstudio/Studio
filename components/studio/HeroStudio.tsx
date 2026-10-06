@@ -5,14 +5,11 @@ export default function HeroStudio() {
         <div className="container --xlarge --m-medium">
           <div className="text-group">
             <div className="title --medium" data-increment="0.8">
-              Designers of experiential conditions that outlive the moment.
+              We design experiences that linger.
             </div>
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
-                <strong>
-                  edith.
-                </strong>
-                creates immersive visual environments for culture, brands, and moments meant to be shared.
+                Edith is a creative studio working across design, art, technology, and emerging media.
               </p>
             </div>
           </div>

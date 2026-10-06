@@ -10,9 +10,9 @@ export default function HeroHome() {
               </div>
               <div className="wysiwyg --xsmall --delta" data-increment="0.8">
                 <p>
-                  flying over the
+                  flying over
                   <br />
-                  virtual skies
+                  virtual skies and
                 </p>
               </div>
             </div>
@@ -69,9 +69,11 @@ export default function HeroHome() {
                 </a>
               </div>
               <div className="title --medium --delta" data-increment="1">
-                where design, art,
+                the intersection
                 <br />
-                and technology collide
+                between design, art,
+                <br />
+                and technology
               </div>
               <div className="works2 --parallax" data-parallax="-85">
                 <a href="/work/horitzo-the-shape-of-a-culinary-landscape" className="--delta --more" data-taxi-ignore="">

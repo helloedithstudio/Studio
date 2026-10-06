@@ -5,11 +5,9 @@ export default function Block3() {
         <div className="container --xlarge --m-wide" data-parallax="-15">
           <div className="first --parallax">
             <div className="title --medium --delta" data-increment="0.8">
-              dimensional
+              beyond
               <br />
-              values, experiential
-              <br />
-              frames
+              the familiar
             </div>
             <div className="video --delta">
               <video preload="metadata" autoplay-onscroll="" loop playsInline muted poster="/media/posters/art-frames.png">
@@ -24,18 +22,18 @@ export default function Block3() {
             </div>
             <div className="wysiwyg --xxlarge --delta" data-increment="0.8">
               <p>
-                invisible landscape
+                systems
                 <br />
-                mindsets
+                of feeling
               </p>
             </div>
           </div>
           <div className="third --parallax">
             <div className="wysiwyg --xsmall --delta" data-increment="0.8">
               <p>
-                landing out off
+                designed
                 <br />
-                repetition
+                to be felt
               </p>
             </div>
             <div className="video --delta">

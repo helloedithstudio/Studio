@@ -6,7 +6,7 @@ export default function SubheroStudio() {
           <div className="text-group">
             <div className="wysiwyg --xxlarge" data-increment="0.8">
               <p>
-                since 2015, museums, cultural institutions, brands, and event creators have turned to edith. when the aim isn’t simply to show something, but to shape how it’s felt and how long it stays.
+                We build visual identities, digital experiences, interactive worlds, and experimental work that asks more from the medium—and leaves something behind.
               </p>
             </div>
           </div>

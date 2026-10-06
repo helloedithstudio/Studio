@@ -18,7 +18,7 @@ export default function Awards() {
           <div className="second --parallax" data-parallax="-75">
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
-                We’ve also participated in many major design and audiovisual festivals along the way. But accolades aside, what truly drives us is the pursuit of the unexpected. We don’t think outside the box—we’ve already flattened it and turned it into something entirely new.
+                We’ve also participated in many major design and audiovisual festivals along the way. Recognition is nice. Curiosity is better. We keep looking for the unexpected—the idea that changes the frame instead of fitting inside it.
               </p>
             </div>
             <div className="image">

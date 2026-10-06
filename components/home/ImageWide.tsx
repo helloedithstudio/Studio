@@ -5,7 +5,9 @@ export default function ImageWide() {
         <div className="container --xxxlarge">
           <div className="wysiwyg --medium --delta" data-increment="0.8">
             <p>
-              visual echoes
+              between presence
+              <br />
+              and perception
             </p>
           </div>
           <div className="video --delta" data-desktop="">
