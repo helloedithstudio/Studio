@@ -1,11 +1,5 @@
-import type { Metadata, Viewport } from 'next';
+import type { Viewport } from 'next';
 import '../globals.css';
-
-export const metadata: Metadata = {
-  title: 'Studio - Edith Studio',
-  description: 'Edith is where AI agents and curious minds work in unison: design, art and technology made side by side.',
-  robots: { index: true, follow: true },
-};
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -17,7 +11,7 @@ export const viewport: Viewport = {
 
 export default function StudioLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html id="html" lang="en-US" suppressHydrationWarning>
+    <html id="html" lang="en" suppressHydrationWarning>
       <body
         id="top"
         className="wp-singular page-template page-template-template-flexible page-template-template-flexible-php page page-id-248 wp-theme-edith studio light-mode"

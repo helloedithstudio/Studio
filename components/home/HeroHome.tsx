@@ -3,6 +3,7 @@ export default function HeroHome() {
     <>
       <section className="component component--hero-home hero-home" data-component="hero-home">
         <div className="container --wide">
+          <h1 className="sr-only">Edith Studio: where AI agents and curious minds work in unison</h1>
           <div className="first">
             <div className="left">
               <div className="image --delta">

@@ -12,11 +12,11 @@ export default function HeroUnfolded() {
           <div className="overlay --20" />
           <div className="text-group --text-white --text-center">
             <div className="image --cover --parallax">
-              <img width="449" height="60" src="/assets/2025/04/unfolded.svg" data-src="/assets/2025/04/unfolded.svg" alt="" />
+              <img width="449" height="60" src="/assets/2025/04/unfolded.svg" data-src="/assets/2025/04/unfolded.svg" alt="unfolded" />
             </div>
-            <h2 className="title --large" data-increment="0.8">
+            <h1 className="title --large" data-increment="0.8">
               the experiential space. where, creativity meets technology
-            </h2>
+            </h1>
           </div>
         </div>
       </section>

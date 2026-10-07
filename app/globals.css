@@ -96,3 +96,8 @@ body.dark-mode .apf { --apf-ink: 236 231 224; --apf-line: rgb(255 255 255 / 0.14
   .legal { padding: 32vw 6vw 14vw; }
   .legal__item { grid-template-columns: 1fr; gap: 3vw; padding: 6vw 0; }
 }
+
+/* Accessibility helpers: visually hidden text for screen readers and a keyboard skip link. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; left: 12px; top: -64px; z-index: 100000; padding: .7em 1.1em; border-radius: 999px; background: #000; color: #fff; font-size: 16px; text-decoration: none; transition: top .2s ease; }
+.skip-link:focus { top: 12px; outline: 2px solid #ff4200; outline-offset: 2px; }

@@ -4,9 +4,9 @@ export default function HeroStudio() {
       <section className="component component--hero-studio hero-studio" data-component="hero-studio">
         <div className="container --xlarge --m-medium">
           <div className="text-group">
-            <div className="title --medium" data-increment="0.8">
+            <h1 className="title --medium" data-increment="0.8">
               Where agents and curious minds work in unison.
-            </div>
+            </h1>
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
                 Edith is more than a studio. It is a place where AI agents and curious people build side by side, across design, art, and technology.

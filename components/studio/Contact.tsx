@@ -11,9 +11,9 @@ export default function Contact() {
                 Well… somewhere people and agents can argue an idea into shape.
               </p>
             </div>
-            <h1 className="title --medium" data-increment="0.8">
+            <h2 className="title --medium" data-increment="0.8">
               the best ideas are the ones that were challenged first.
-            </h1>
+            </h2>
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
                 So that is how we work.

@@ -2,6 +2,7 @@ import AppScripts from '@/components/AppScripts';
 import Cursor from '@/components/shared/Cursor';
 import Footer from '@/components/shared/Footer';
 import Header from '@/components/shared/Header';
+import JsonLd from '@/components/shared/JsonLd';
 import PopupForm from '@/components/shared/PopupForm';
 
 // The page frame the theme JS (Taxi + GSAP) expects: #app > #flexible[data-taxi-view] > .inner, with the fixed
@@ -9,10 +10,14 @@ import PopupForm from '@/components/shared/PopupForm';
 export default function PageShell({ slug, children }: { slug: string; children: React.ReactNode }) {
   return (
     <>
+      <a href="#main" className="skip-link" data-taxi-ignore="">
+        Skip to content
+      </a>
+      <JsonLd />
       <div id="app" data-taxi="">
         <div id="flexible" className="flexible" data-taxi-view="default" data-taxi-slug={slug} data-section={slug}>
           <div className="background" />
-          <div className="inner">
+          <div className="inner" id="main" role="main">
             <div className="canvas">
               <div id="unfolded-webgl" className="unfolded-webgl" />
             </div>

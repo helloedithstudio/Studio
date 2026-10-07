@@ -6,9 +6,9 @@ export default function ContactInfo2() {
       <section className="component component--contact-info contact-info" data-component="contact-info">
         <div className="container --xxlarge --m-large">
           <div className="text-group">
-            <h1 className="title --medium" data-increment="0.8">
+            <h2 className="title --medium" data-increment="0.8">
               places
-            </h1>
+            </h2>
           </div>
           <div className="info-group">
             <div className="item --1">

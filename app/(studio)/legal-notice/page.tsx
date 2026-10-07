@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Legal Notice - Edith Studio',
-  description: 'Who runs edith., how we handle your data, and what you can expect from this site.',
-};
+  description: 'Who runs Edith, how we handle your data, and what you can expect from this site.',
+  path: '/legal-notice',
+});
 
 const sections: { title: string; body: React.ReactNode[] }[] = [
   {
