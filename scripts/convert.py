@@ -10,7 +10,12 @@ import sys
 
 from bs4 import BeautifulSoup, NavigableString, Comment
 
-PAGES = {'home': r'D:\Edith-Studio\index.html', 'studio': r'D:\Edith-Studio\studio\index.html'}
+PAGES = {
+    'home': r'D:\Edith-Studio\index.html',
+    'studio': r'D:\Edith-Studio\studio\index.html',
+    'contact': r'D:\Edith-Studio\contact\index.html',
+    'unfolded': r'D:\Edith-Studio\unfold\index.html',
+}
 OUT = r'D:\Edith-Studio\site'
 
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
@@ -115,8 +120,10 @@ MEDIA_SLOTS = {
     'HOME_art_06_x25.mp4': 'art-frames', 'HOME_art_06-2.jpg': 'art-frames',
     'HOME_art_08x23.mp4': 'art-repetition', 'HOME_art_08-2.jpg': 'art-repetition',
     '06projects.mp4': 'studio-projects',
+    'unfolded.mp4': 'unfolded-hero', 'unfolded.png': 'unfolded-hero',
 }
-SOURCE_HOST = re.compile(r'^https?://(?:www\.)?edith\.studio(/.*)?$')
+# the scrapes still carry the original host; the site was since renamed, so match both
+SOURCE_HOST = re.compile(r'^https?://(?:www\.)?(?:blit|edith)\.studio(/.*)?$')
 
 
 def detach(root):
@@ -147,6 +154,19 @@ def detach(root):
         src = v.find('source')
         if src and not v.get('poster') and src['src'].startswith('/media/'):
             v['poster'] = '/media/posters/' + src['src'].rsplit('/', 1)[-1].replace('.mp4', '.png')
+
+
+def rebrand(root):
+    """Same blit -> edith rename the existing pages got, applied to text and alt/title (never to URLs)."""
+    def sub(t):
+        return re.sub(r'blit', lambda m: {'Blit': 'Edith', 'BLIT': 'EDITH'}.get(m.group(0), 'edith'), t, flags=re.I)
+    for t in root.find_all(string=True):
+        if not isinstance(t, Comment) and re.search('blit', t, re.I):
+            t.replace_with(sub(str(t)))
+    for el in root.find_all(True):
+        for a in ('alt', 'title', 'aria-label'):
+            if el.get(a):
+                el[a] = sub(el[a])
 
 
 # ---- DOM cleanup -----------------------------------------------------------------------------
@@ -198,16 +218,24 @@ def load_body(path):
         c.extract()
     unsplit(body)
     detach(body)
+    rebrand(body)
     return body
 
 
+FORCE = False
+
+
 def write(path, text):
+    # components are hand-edited after generation (copy, footer, brand), so never clobber one that exists
+    if os.path.exists(path) and not FORCE:
+        print('  skip (exists):', os.path.relpath(path, OUT))
+        return
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8', newline='\n') as f:
         f.write(text)
 
 
-def main():
+def write_chrome():
     # shared chrome comes from the home page (identical on every page apart from runtime state)
     home = load_body(PAGES['home'])
     chrome = [
@@ -229,16 +257,31 @@ def main():
         write(f'{OUT}/components/shared/{name}.tsx', text)
     print('shared:', [n for n, _ in chrome])
 
-    for page, path in PAGES.items():
-        body = load_body(path)
-        names = []
+
+def main(argv):
+    """python convert.py [page ...] [--chrome] [--force]. No pages = every page without a components/<page> dir yet."""
+    global FORCE
+    FORCE = '--force' in argv
+    pages = [a for a in argv if not a.startswith('--')] or [
+        p for p in PAGES if not os.path.isdir(f'{OUT}/components/{p}')]
+    unknown = [p for p in pages if p not in PAGES]
+    if unknown:
+        sys.exit(f'unknown page(s): {unknown}; choose from {list(PAGES)}')
+    if '--chrome' in argv:
+        write_chrome()
+    for page in pages:
+        body = load_body(PAGES[page])
+        names, seen = [], {}
         for sec in body.select('#flexible > .inner > section.component'):
             cls = next(c for c in sec['class'] if c.startswith('component--'))
             name = pascal(cls)
+            seen[name] = seen.get(name, 0) + 1
+            if seen[name] > 1:  # the same section type can repeat on a page (contact-info x2)
+                name += str(seen[name])
             write(f'{OUT}/components/{page}/{name}.tsx', component(name, [sec]))
             names.append(name)
         print(page, names)
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])

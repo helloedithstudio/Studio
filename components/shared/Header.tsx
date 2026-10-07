@@ -40,7 +40,7 @@ export default function Header({ active }: { active?: string }) {
       </header>
       <div className="cta" data-desktop="">
         <a href="/contact" className="link" data-taxi-ignore="">
-          let´s talk
+          let’s talk
         </a>
       </div>
       <div className="circle" />

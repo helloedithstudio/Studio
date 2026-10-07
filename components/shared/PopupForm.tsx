@@ -1,3 +1,5 @@
+import CalendlyFrame from '@/components/shared/CalendlyFrame';
+
 export default function PopupForm() {
   return (
     <>
@@ -8,7 +10,7 @@ export default function PopupForm() {
             <div className="floating --bottomcenter">
               <i className="fa-solid fa-xmark closer" />
               <div className="scroll" data-lenis-prevent="">
-                <iframe width="100%" height="100%" frameBorder="0" title="Booking" />
+                <CalendlyFrame />
               </div>
               <div className="gradient" />
             </div>

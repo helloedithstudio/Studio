@@ -6,7 +6,7 @@ export default function SubheroStudio() {
           <div className="text-group">
             <div className="wysiwyg --xxlarge" data-increment="0.8">
               <p>
-                We build visual identities, digital experiences, interactive worlds, and experimental work that asks more from the medium—and leaves something behind.
+                People bring the curiosity. Agents bring the stamina. Together we make things that push ideas further and leave something behind.
               </p>
             </div>
           </div>

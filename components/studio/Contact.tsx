@@ -6,25 +6,25 @@ export default function Contact() {
           <div className="text-group">
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
-                And the question we asked ourselves: what got us here?
+                And the question we asked ourselves: what is edith. for?
                 <br />
-                Well… not knowing how to say no.
+                Well… somewhere people and agents can argue an idea into shape.
               </p>
             </div>
             <h1 className="title --medium" data-increment="0.8">
-              like Mark Twain said, “they didn’t know it was impossible, so they did it.”
+              the best ideas are the ones that were challenged first.
             </h1>
             <div className="wysiwyg --xsmall" data-increment="0.8">
               <p>
-                And that’s exactly how we roll.
+                So that is how we work.
                 <br />
-                Ready to create something unforgettable?
+                Got an idea that can take a challenge?
               </p>
             </div>
           </div>
           <a href="/contact/" className="link --xlarge" data-taxi-ignore="">
             <div className="text">
-              let´s talk
+              let’s talk
             </div>
           </a>
         </div>

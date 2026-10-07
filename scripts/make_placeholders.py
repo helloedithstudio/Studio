@@ -6,9 +6,12 @@ OUT = r'D:\Edith-Studio\site\public\media\posters'
 SLOTS = {  # slot: aspect ratio (w/h)
     'hero-art': 1.0, 'project-echoes': 1.0667, 'reel-loop': 16 / 9, 'reel-full': 16 / 9,
     'project-forced': 16 / 9, 'art-wide': 16 / 9, 'art-frames': 2.05714, 'art-repetition': 1.8, 'studio-projects': 16 / 9,
+    'unfolded-hero': 16 / 9,
 }
 os.makedirs(OUT, exist_ok=True)
 for slot, ratio in SLOTS.items():
+    if os.path.exists(os.path.join(OUT, f'{slot}.png')):
+        continue  # never replace a poster that already exists
     w = 960
     h = round(w / ratio)
     im = Image.new('RGB', (w, h), (17, 17, 24))

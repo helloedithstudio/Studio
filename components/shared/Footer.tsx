@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="copyright">
                 <div className="wysiwyg --xxsmall --text-left --na" data-increment="0.8">
                   <p>
-                    Edith Entertainment ©2025 EDITH –
+                    Edith Studio ©2026 edith. –
                     <a className="link --text" href="/legal-notice/" data-taxi-ignore="">
                       Legal Notice
                     </a>
