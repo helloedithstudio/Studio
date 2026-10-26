@@ -15,7 +15,7 @@ export default function JsonLd() {
         description: site.description,
         email: site.email,
         image: `${site.url}${site.ogImage}`,
-        founder: { '@type': 'Person', name: site.founder },
+        founder: { '@type': 'Person', '@id': site.founderId, name: site.founder, url: site.founderUrl },
         areaServed: 'Worldwide',
         availableLanguage: 'English',
         sameAs: [site.instagram],

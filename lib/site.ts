@@ -10,6 +10,10 @@ export const site = {
     'Edith is where AI agents and curious minds work in unison. An independent studio for design, art and technology, working with clients worldwide.',
   email: 'hello.edithstudio@gmail.com',
   founder: 'Kevin Andrew',
+  // The founder's canonical Person node lives on his portfolio; referencing it by @id
+  // keeps one Kevin Andrew across both sites instead of a second, unconnected one.
+  founderUrl: 'https://www.kevinandrew.tech',
+  founderId: 'https://www.kevinandrew.tech/#person',
   instagram: 'https://www.instagram.com/edith_.studio/',
   ogImage: '/og/edith-og.jpg',
   locale: 'en',
